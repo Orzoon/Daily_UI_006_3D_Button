@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700,800');
+
+// css Variables
+$height: 30px;
+$width: 250px;
+$breadth: 80px;
+$font: 'Open Sans', sans-serif;
+
+body {
+    background: #eee;
+}
+// common styles
+.container {
+    height: 200px;
+    width: 300px;
+    position: relative;
+    margin: 50px auto 0 auto;
+    perspective: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font;
+}
+
+.button {
+    cursor: pointer;
+    height: $height;
+    width: $width;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: rotateX(-40deg) rotateY(40deg);
+    transition: all .5s ease-in;
+}
+
+
+.side {
+    position: absolute;
+    border: 1px solid #ddd;
+    opacity: .1;
+
+    &:nth-child(1){
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $breadth;
+        width: $width;
+        font-size: 16px;
+        font-weight: 900;
+        transform: rotateX(90deg) translateZ($breadth/2);
+        color: #fff;
+        i {
+            margin-right: 20px;
+        }
+    }
+
+    &:nth-child(2) {
+        opacity: .4;
+        height: $breadth;
+        width: $width;
+        transform: rotateX(-90deg) translateZ(-10px);
+    }
+
+    &:nth-child(3) {
+        height: $height;
+        width: $breadth;
+        transform: rotateY(-90deg) translateZ($breadth/2);
+        //transition: transform 2s linear;
+    }
+
+    &:nth-child(4) {
+        height: $height;
+        width: $breadth;
+        transform: rotateY(90deg) translateZ($breadth/2);
+        right: 0;
+    }
+
+    &:nth-child(5) {
+        height: $height;
+        width: $width;
+        transform: rotateX(0deg) translateZ($breadth/2);   
+    }
+
+    &:nth-child(6) {
+        height: $height;
+        width: $width;
+        transform: rotateX(180deg) translateZ($breadth/2);   
+    }
+
+}
+
+.cd, .fb, .in{
+    opacity: .6;
+}
+
+// bottom container
+.mid, .last {
+    height: 100px;
+    margin-top: 0px;
+}
+
+.last {
+    margin-top: 0;
+}
+// btn first
+.codepen,.cd {
+    background: #000;
+}
+
+.first:hover {
+    transform: rotateX(-70deg) rotateY(30deg) rotateZ(40deg);
+    transition: all .5s ease-in;
+}
+
+// btn second
+.facebook, .fb{
+    background: #3b5998;
+}
+
+.second, .third {
+    transform: rotateX(-30deg) rotateY(0deg);
+    transform-origin: center center;
+}
+
+.second:hover, .third:hover {
+    transform: rotateX(-100deg) rotateY(0deg) rotateZ(0deg);
+    transition: all .5s ease-in;
+}
+
+// btn third
+.instagram, .in {
+    background: #e4405f;
+}
+
+//e4405f
